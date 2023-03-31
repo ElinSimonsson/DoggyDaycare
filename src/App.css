@@ -1,0 +1,39 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.dogs-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+}
+
+.dog-section:hover {
+border-radius: 5px;
+box-shadow: 1px 1px 7px blue;
+}
+
+.dog-section {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 1px 1px 7px lightgray;
+  
+}
+
+.present-true, .present-false {
+  margin-top: -10px;
+  margin-bottom: 20px;
+
+}
+
+.dog-img {
+  border-radius: 5px 5px 0 0;
+  object-fit: cover;
+  width: 250px;
+  height: 200px;
+}
