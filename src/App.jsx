@@ -5,24 +5,30 @@ import './App.css'
 import Catalog from './components/Catalog'
 
 function App() {
-  const [data, setData] = useState(null);
+  const [selectedDog, setSelectedDog] = useState(null);
   const apiUrl = 'https://api.jsonbin.io/v3/b/642585f1ace6f33a2200b1e5';
 
   useEffect(() => {
     fetch(apiUrl)
     .then((response)=> response.json())
     .then((actualData)=> {
-      setData(actualData);
+      localStorage.setItem('dogs', JSON.stringify(actualData));
     })
     .catch((error) => {
       console.log(error);
     })
   }, []);
 
-  return (
+  useEffect(() => {
+    if (selectedDog!= null) {
+      console.log(selectedDog)
+    }
     
+  }, [selectedDog]);
+
+  return (
     <div>
-      <Catalog data = {data}/>
+      <Catalog setSelectedDog={setSelectedDog}/>
     </div>
   )
 }
