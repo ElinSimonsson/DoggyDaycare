@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Catalog = (props) => {
   //let dogs = JSON.parse(localStorage.getItem("dogs"));
@@ -49,6 +50,7 @@ const Catalog = (props) => {
   );
 
   const dogItems = dogsToShow && dogsToShow.map((dog, i) => (
+    // <Link key={i} to = "/dogdetails">
     <section key={i} className="dog-section" onClick={() => handleDogClick(dog)}>
       <img className="dog-img" src={dog.img} alt={`A pic of ${dog.name}`} />
       <div>
@@ -63,6 +65,7 @@ const Catalog = (props) => {
         )}
       </div>
     </section>
+    // </Link>
   ));
 
   return (
