@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
 const Catalog = (props) => {
-  //let dogs = JSON.parse(localStorage.getItem("dogs"));
 
   const SHOW_ALL_DOGS = "Show all dogs";
   const SHOW_PRESENT_DOGS = "Show only present dogs";
@@ -10,6 +8,10 @@ const Catalog = (props) => {
 
   const [dogsToShow, setDogsToShow] = useState([]);
   const [selectedOption, setSelectedOption] = useState(SHOW_ALL_DOGS);
+
+  useEffect(() => {
+    props.setHeaderTitle("test");
+   }, []);
 
   useEffect(() => {
     const dogs = JSON.parse(localStorage.getItem('dogs'));
@@ -50,26 +52,22 @@ const Catalog = (props) => {
   );
 
   const dogItems = dogsToShow && dogsToShow.map((dog, i) => (
-    // <Link key={i} to = "/dogdetails">
-    <section key={i} className="dog-section" onClick={() => handleDogClick(dog)}>
+  
+    <section key={i} className={`dog-section-${dog.present ? "present" : "absent"}`} 
+    onClick={() => handleDogClick(dog)}>
       <img className="dog-img" src={dog.img} alt={`A pic of ${dog.name}`} />
       <div>
-        <p className="dog-name">
-          {" "}
-          <b>Name:</b> {dog.name}{" "}
-        </p>
-        {dog.present ? (
-          <p className="present-true">{dog.name} is currently here</p>
-        ) : (
-          <p className="present-false">{dog.name} is currently away</p>
-        )}
+        <p className="dog-name"><b>Name:</b> {dog.name}</p>
+        <p className="dog-breed"><b>Breed:</b> {dog.breed}</p>
+        <p className="dog-owner"><b>Owner:</b> {dog.owner.name} {dog.owner.lastName}</p>
+        
       </div>
     </section>
-    // </Link>
   ));
 
   return (
-    <div>
+    <div className="catalog-container">
+      <h1>The Doggy Daycare</h1>
       <section className="options">{options}</section>
       <div className="dogs-container">{dogItems}</div>
     </div>

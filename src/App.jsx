@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Catalog from './components/Catalog'
-import { Route, Routes, useParams } from 'react-router-dom'
+import Header from './components/Header'
+import { Link, Route, Routes, useParams } from 'react-router-dom'
 import Welcome from './components/Welcome'
 import DogDetails from './components/DogDetails'
 import { useNavigate } from 'react-router-dom'
 
 function App() {
   const [selectedDog, setSelectedDog] = useState(null);
+  const [headerTitle, setHeaderTitle] = useState('');
   const apiUrl = 'https://api.jsonbin.io/v3/b/642585f1ace6f33a2200b1e5';
 
   let navigate = useNavigate();
@@ -34,21 +34,20 @@ function App() {
       navigate("/dogdetails/" + (currentDogIndex + 1));
       
       const currentDog = !isNaN(params.currentdog) ? Number(params.currentdog) : 1;
-      console.log(currentDog);
     }
-    
     
   }, [selectedDog]);
 
 
   return (
-    <div>
+    <div className='App'>
+      <Header title= {headerTitle} />
       <Routes>
         <Route path='/' element = {
-          <Welcome />
+          <Welcome setHeaderTitle={() => setHeaderTitle("Welcome to Doggy Daycare")}/>
         }/>
         <Route path='/dogs' element = {
-           <Catalog setSelectedDog={setSelectedDog}/>
+           <Catalog setSelectedDog={setSelectedDog} setHeaderTitle={() => setHeaderTitle("")}/>
          } />
          <Route path='/dogdetails' element = {
           <DogDetails selectedDog = {selectedDog} />
