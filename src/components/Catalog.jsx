@@ -1,3 +1,4 @@
+import './catalog.css'
 import { useState, useEffect } from "react";
 
 const Catalog = (props) => {
@@ -53,20 +54,20 @@ const Catalog = (props) => {
 
   const dogItems = dogsToShow && dogsToShow.map((dog, i) => (
   
-    <section key={i} className={`dog-section-${dog.present ? "present" : "absent"}`} 
+    <section key={i} className={`dog-section${dog.present ? " present" : " absent"}`} 
     onClick={() => handleDogClick(dog)}>
       <img className="dog-img" src={dog.img} alt={`A pic of ${dog.name}`} />
-      <div>
-        <p className="dog-name"><b>Name:</b> {dog.name}</p>
-        <p className="dog-breed"><b>Breed:</b> {dog.breed}</p>
-        <p className="dog-owner"><b>Owner:</b> {dog.owner.name} {dog.owner.lastName}</p>
+      <div className="dog-card-info-container">
+        <p><b>Name:</b> {dog.name}</p>
+        <p><b>Breed:</b> {dog.breed}</p>
+        <p><b>Owner:</b> {dog.owner.name} {dog.owner.lastName}</p>
         
       </div>
     </section>
   ));
 
   return (
-    <div className="catalog-container">
+    <div className="catalog">
       <h1>The Doggy Daycare</h1>
       <section className="options">{options}</section>
       <div className="dogs-container">{dogItems}</div>

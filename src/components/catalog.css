@@ -1,0 +1,60 @@
+.catalog > h1 {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 4vw;
+  }
+
+  .catalog .options {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .catalog .dogs-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+  }
+  
+  .catalog .dogs-container > section {
+    width: 15vw;
+  }
+  
+  .dog-section.present:hover, .dog-section.absent:hover {
+  border-radius: 5px;
+  box-shadow: 1px 1px 7px blue;
+  }
+  
+  .dog-section.present, .dog-section.absent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 5px;
+  }
+  
+  .dog-card-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px;
+    margin-bottom: 6px;
+  }
+  
+  .dog-section.present {
+    box-shadow: 1px 1px 7px green;
+  }
+  
+  .dog-section.absent {
+    box-shadow: 1px 1px 7px red;
+  }
+  
+  .dog-card-info-container p {
+    margin: 6px 0;
+  }
+  
+  .dog-img {
+    border-radius: 5px 5px 0 0;
+    object-fit: cover;
+    width: 15vw;
+    height: 15vw;
+    margin-bottom: 6px;
+  }

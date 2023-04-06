@@ -1,0 +1,83 @@
+.dogDetails h1 {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 4vw;
+  }
+  
+ .dogDetails .container {
+    display: flex;
+    background-color: yellow;
+  }
+  
+  .dogDetails img {
+    object-fit: cover;
+    width: 30vw;
+    height: 30vw;
+  }
+  
+  .dogDetails .dog-info-sect {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .dogDetails .dog-info-sect p {
+    margin: 7px 0;
+  }
+
+  .dogDetails .dog-title {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .dogDetails .owner-title {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  @media (max-width: 1800px) {
+    .dogDetails img {
+      object-fit: cover;
+      width: 30vw;
+      height: 30vw;
+    }
+    .dogDetails .container {
+      background-color: blueviolet;
+    }
+  }
+  
+  @media (max-width: 1400px) {
+    .dogDetails img {
+      object-fit: cover;
+      width: 30vw;
+      height: 30vw;
+    }
+    .dogDetails .container {
+      background-color: pink;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .dogDetails img {
+      object-fit: cover;
+      width: 30vw;
+      height: 30vw;
+    }
+  
+    .dogDetails .container {
+      background-color: orange;
+    }
+  }
+  
+  @media (max-width: 450px) {
+    .dogDetails img {
+      object-fit: cover;
+      width: 30vw;
+      height: 30vw;
+    }
+  
+    .dogDetails .container {
+      background-color: yellow;
+    }
+  }

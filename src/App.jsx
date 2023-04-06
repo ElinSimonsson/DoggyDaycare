@@ -1,11 +1,12 @@
-import { useEffect, useState } from 'react'
 import './App.css'
+import { useEffect, useState } from 'react'
 import Catalog from './components/Catalog'
 import Header from './components/Header'
 import { Link, Route, Routes, useParams } from 'react-router-dom'
 import Welcome from './components/Welcome'
 import DogDetails from './components/DogDetails'
 import { useNavigate } from 'react-router-dom'
+
 
 function App() {
   const [selectedDog, setSelectedDog] = useState(null);

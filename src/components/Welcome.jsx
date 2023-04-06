@@ -1,5 +1,7 @@
+import './welcome.css'
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import largeDogPic from '../assets/img/dog1.jpeg'
 
 const Welcome = (props) => {
 
@@ -9,9 +11,9 @@ const Welcome = (props) => {
       
 
     return (
-        <div className="welcome-div">
-            <img className="welcome-dog-img" src="https://hips.hearstapps.com/hmg-prod/images/golden-retriever-royalty-free-image-506756303-1560962726.jpg?crop=1.00xw:0.756xh;0,0.0756xh&resize=1200:*" alt="picture of a dog" />
-            <div className="welcome-button-container">
+        <div className="welcome">
+            <img className="dog-img" src={largeDogPic}  alt=""/>
+            <div className="button-container">
                 <Link to="/dogs">
                     <button>Continue to see all dogs</button>
                 </Link>

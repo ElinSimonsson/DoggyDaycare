@@ -1,3 +1,4 @@
+import './dogDetails.css'
 import { useParams } from "react-router-dom";
 
 
@@ -16,14 +17,37 @@ const DogDetails = (props) => {
     } 
 
     return (
-       <div className="dog-details">
-        <img className="dog-details-img" src={dog.img} alt={`A pic of ${dog.name}`} />
-        <section className="dog-details-section">
-        {dog.name}
-        {dog.chipNumber}
-        </section>
+        <div className="dogDetails">
+            <h1>{dog.name}</h1>
+            <div className="container">
        
+                <section>
+                    <img src={dog.img} alt={`A pic of ${dog.name}`} />   
+                </section>
+        
+                <section className="dog-info-sect">
+                    <section className="dog-title">
+                        <p>Details :</p>
+                    </section>
+
+                    <p><b>Name:</b> {dog.name}</p>
+                    <p><b>Age:</b> {dog.age}</p>
+                    <p><b>Sex:</b> {dog.sex}</p>
+                    <p><b>Breed:</b> {dog.breed}</p>
+                    <p><b>ChipNumber:</b> {dog.chipNumber}</p>
+
+                    <section className="owner-title">
+                        <p>Owner:</p>
+                    </section>
+                       
+                    <p><b>Name:</b> {dog.owner.name}</p>
+                    <p><b>Last name:</b> {dog.owner.lastName}</p>
+                    <p><b>Phone number:</b> {dog.owner.phoneNumber}</p>
+                       
+                    
        
+                </section>
+            </div>
        </div>
     );
 }
