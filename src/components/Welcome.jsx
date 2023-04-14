@@ -8,16 +8,19 @@ const Welcome = (props) => {
    useEffect(() => {
     props.setHeaderTitle();
    }, []);
-      
+
+   const ContinueButton = () => (
+        <div className="button-container">
+            <Link to="/dogs">
+                <button>Continue to see all dogs</button>
+            </Link>
+        </div>
+   )
 
     return (
         <div className="welcome">
             <img className="dog-img" src={largeDogPic}  alt=""/>
-            <div className="button-container">
-                <Link to="/dogs">
-                    <button>Continue to see all dogs</button>
-                </Link>
-            </div>
+            <ContinueButton />
         </div>
     ); 
 }

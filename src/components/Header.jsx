@@ -6,7 +6,7 @@ const Header = (props) => {
     
 
     return(
-        <div className='header'>
+        <div className='header' >
             <header>
                 <Link to= "/">
                     <img className='logo-img' src={dogLogo} alt="dog logo" />

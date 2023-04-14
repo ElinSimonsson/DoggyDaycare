@@ -1,60 +1,100 @@
 .catalog > h1 {
     font-family: 'Gloria Hallelujah', cursive;
-    font-size: 4vw;
-  }
+    font-size: 2em;
+    margin-top: 70px;
+      
+}
 
-  .catalog .options {
+.catalog .options {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-  }
+    flex-wrap: wrap;
+}
   
-  .catalog .dogs-container {
+.catalog .dogs-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1em;
-  }
+    grid-gap: 1em;
+    place-items: center;
+    margin-bottom: 10px;
+}
   
-  .catalog .dogs-container > section {
-    width: 15vw;
-  }
+.catalog .dogs-container > section {
+    width: 200px;
+}
   
-  .dog-section.present:hover, .dog-section.absent:hover {
-  border-radius: 5px;
-  box-shadow: 1px 1px 7px blue;
-  }
-  
-  .dog-section.present, .dog-section.absent {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.dog-section.present:hover, .dog-section.absent:hover {
     border-radius: 5px;
-  }
+    box-shadow: 1px 1px 7px blue;
+}
   
-  .dog-card-info-container {
+.dog-section.present, .dog-section.absent {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    border-radius: 5px;
+}
+  
+.dog-card-info-container {
+    text-align: center;
     margin-left: 10px;
     margin-bottom: 6px;
-  }
+}
   
-  .dog-section.present {
+.dog-section.present {
     box-shadow: 1px 1px 7px green;
-  }
+}
   
-  .dog-section.absent {
+.dog-section.absent {
     box-shadow: 1px 1px 7px red;
-  }
+}
   
-  .dog-card-info-container p {
+.dog-card-info-container p {
     margin: 6px 0;
-  }
+}
   
-  .dog-img {
+.dog-img {
     border-radius: 5px 5px 0 0;
     object-fit: cover;
-    width: 15vw;
-    height: 15vw;
+    width: 100%;
+    height: 150px;
     margin-bottom: 6px;
+}
+
+@media (max-width: 1050px) {
+  .catalog .dogs-container {
+    grid-template-columns: repeat(3, 1fr);
+  } 
+}
+
+@media (max-width: 768px) {
+  .catalog .dogs-container {
+    grid-template-columns: repeat(2 ,1fr);     
   }
+
+  .catalog .options {
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .catalog .options .option {
+    margin-right: 0; 
+    margin-bottom: 0px; 
+  }
+}
+
+@media (max-width: 450px) {
+  .catalog .dogs-container > section {
+    width: 35vw;
+  }
+
+  .catalog .options {
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .catalog .options .option {
+    margin-right: 0; 
+    margin-bottom: 0px; 
+  }
+}

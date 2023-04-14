@@ -5,21 +5,47 @@
   
  .dogDetails .container {
     display: flex;
-    background-color: yellow;
+    border-radius: 5px;
+    box-shadow: 1px 1px 7px gray;
+  }
+
+  .dogDetails {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+
+  .dogDetails .container.present-false {
+    background-color: red;
+    height: 350px;
+    width: 600px;
+  }
+  
+  .dogDetails .container.present-true {
+    background-color: greenyellow;
+    height: 350px;
+    width: 600px;
   }
   
   .dogDetails img {
     object-fit: cover;
-    width: 30vw;
-    height: 30vw;
+    object-position: center;
+    width: 300px;
+    height: 350px;
+    border-radius: 5px 0 0 5px;
   }
   
   .dogDetails .dog-info-sect {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     margin-left: 10px;
     margin-right: 10px;
+    text-align: left;
   }
 
   .dogDetails .dog-info-sect p {
@@ -34,50 +60,132 @@
   .dogDetails .owner-title {
     width: 100%;
     margin-top: 10px;
+    text-align: center;
   }
 
-  @media (max-width: 1800px) {
-    .dogDetails img {
-      object-fit: cover;
-      width: 30vw;
-      height: 30vw;
-    }
-    .dogDetails .container {
-      background-color: blueviolet;
-    }
+  .dogDetails .back-button {
+    margin: 10px;
+    margin-bottom: 50px;
   }
-  
-  @media (max-width: 1400px) {
-    .dogDetails img {
-      object-fit: cover;
-      width: 30vw;
-      height: 30vw;
-    }
-    .dogDetails .container {
-      background-color: pink;
-    }
+
+@media (max-width: 768px) {
+
+  .dogDetails .container.present-false {
+    background-color: red;
+    height: auto;
+    width: auto;
   }
-  
-  @media (max-width: 768px) {
-    .dogDetails img {
-      object-fit: cover;
-      width: 30vw;
-      height: 30vw;
-    }
-  
-    .dogDetails .container {
-      background-color: orange;
-    }
+
+  .dogDetails .container.present-true {
+    background-color: greenyellow;
+    height: auto;
+    width: auto;
   }
-  
-  @media (max-width: 450px) {
-    .dogDetails img {
-      object-fit: cover;
-      width: 30vw;
-      height: 30vw;
-    }
-  
-    .dogDetails .container {
-      background-color: yellow;
-    }
+
+  .dogDetails {
+    width: 80vh;
   }
+
+  .dogDetails h1 {
+    font-size: 30px;
+    margin-top: 50px;
+  }
+
+  .dogDetails .dog-info-sect p {
+    margin: 6px 0;
+  }
+
+  .dogDetails .container {
+    flex-direction: column;
+    width: 60%;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .dogDetails img {
+    object-fit: cover;
+    width: 100%;
+    height: 30vw;
+    border-radius: 5px 5px 0 0;
+  }
+}
+  
+@media (max-width: 450px) {
+  .dogDetails {
+    width: 90vw;
+    margin-top: 20px;
+  }
+
+  .dogDetails h1 {
+    font-size: 2em;
+    margin-top: 50px;
+  }
+
+  .dogDetails .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dogDetails img {
+    object-fit: cover;
+    width: 100%;
+    height: 30vh;
+  }
+
+  .dogDetails .dog-info-sect {
+    margin: 10px;
+  }
+
+  .dogDetails .dog-info-sect p {
+    margin: 7px 0;
+    font-size: 1em;
+  }
+
+  .dogDetails .owner-title {
+    text-align: center;
+    margin: 10px;
+  }
+
+  .dogDetails > button {
+    margin: 10px;
+    font-size: 1em;
+  }
+}
+@media (max-height: 700px) and (max-width: 768px) { 
+  .dogDetails {
+    margin-top: 50px;
+  }
+}
+
+@media (max-height: 500px) and (max-width: 768px) { 
+  .dogDetails {
+    margin-top: 100px;
+  }
+}
+@media (max-height: 380px) and (max-width: 768px) { 
+  .dogDetails {
+    margin-top: 150px;
+  }
+}
+
+@media (max-height: 480px) and (max-width: 450px) { 
+  .dogDetails {
+    margin-top: 50px;
+  }
+}
+
+@media (max-height: 400px) and (max-width: 450px) { 
+  .dogDetails {
+    margin-top: 100px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .dogDetails .container.present-true {
+    background-color: green;
+  }
+
+  .dogDetails .container.present-false {
+    background-color: darkred;
+  }
+}

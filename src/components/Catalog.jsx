@@ -53,15 +53,11 @@ const Catalog = (props) => {
   );
 
   const dogItems = dogsToShow && dogsToShow.map((dog, i) => (
-  
     <section key={i} className={`dog-section${dog.present ? " present" : " absent"}`} 
     onClick={() => handleDogClick(dog)}>
       <img className="dog-img" src={dog.img} alt={`A pic of ${dog.name}`} />
       <div className="dog-card-info-container">
         <p><b>Name:</b> {dog.name}</p>
-        <p><b>Breed:</b> {dog.breed}</p>
-        <p><b>Owner:</b> {dog.owner.name} {dog.owner.lastName}</p>
-        
       </div>
     </section>
   ));

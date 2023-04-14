@@ -1,14 +1,14 @@
 .welcome {
     position:absolute;
-    top: 10vw;
     left: 0;
     width:100vw;
-    height: 80vh;
+    height: 100vh;
   }
   
   .welcome .dog-img {
     width: 100%;
     height: 50vh;
+    margin-top: 20vh;
     object-fit: cover;
     object-position: center top;
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, white 50%);
@@ -17,9 +17,20 @@
   }
   
   .welcome .button-container {
-    height: 30vh;
+    height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+  }
+
+  @media (max-width: 768px) {
+    .welcome .dog-img {
+      margin-top: 25vh;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .welcome .dog-img {
+      margin-top: 20vh;
+    }
   }
